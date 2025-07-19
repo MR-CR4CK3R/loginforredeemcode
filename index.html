@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Animated Welcome</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      height: 100vh;
+      background: linear-gradient(135deg, #1f1c2c, #928dab);
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      color: white;
+      overflow: hidden;
+    }
+
+    h1 {
+      font-size: 3rem;
+      animation: slideFadeIn 2s ease-out forwards;
+      opacity: 0;
+    }
+
+    p {
+      font-size: 1.2rem;
+      margin-top: 10px;
+      opacity: 0;
+      animation: fadeIn 3s ease-out 1s forwards;
+    }
+
+    .glow-button {
+      margin-top: 30px;
+      padding: 12px 25px;
+      border: none;
+      background: #00f0ff;
+      color: #000;
+      font-weight: bold;
+      font-size: 1rem;
+      border-radius: 8px;
+      cursor: pointer;
+      box-shadow: 0 0 10px #00f0ff, 0 0 20px #00f0ff, 0 0 30px #00f0ff;
+      transition: transform 0.3s ease;
+      animation: pulse 2s infinite;
+    }
+
+    .glow-button:hover {
+      transform: scale(1.1);
+    }
+
+    @keyframes slideFadeIn {
+      0% {
+        transform: translateY(-50px);
+        opacity: 0;
+      }
+      100% {
+        transform: translateY(0);
+        opacity: 1;
+      }
+    }
+
+    @keyframes fadeIn {
+      to {
+        opacity: 1;
+      }
+    }
+
+    @keyframes pulse {
+      0%, 100% {
+        box-shadow: 0 0 10px #00f0ff, 0 0 20px #00f0ff;
+      }
+      50% {
+        box-shadow: 0 0 20px #00f0ff, 0 0 40px #00f0ff;
+      }
+    }
+  </style>
+</head>
+<body>
+  <h1>Welcome to My Page</h1>
+  <p>Simple. Elegant. Animated.</p>
+</body>
+</html>
